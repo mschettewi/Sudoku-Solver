@@ -1,0 +1,65 @@
+table {
+  border: 4px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0px;
+  border: 1px solid black;
+}
+
+td:nth-child(3n+3) {
+  padding: 0px;
+  border-right: 3px solid black;
+}
+
+tr:nth-child(3n-1) {
+  border-top: 3px solid black;
+}
+
+tr:first-child {
+  border-top: 3px solid black;
+}
+
+.original {
+  background-color: LightSkyBlue;
+}
+
+input[type="number"] {
+  border: 0px solid black;
+  width: 50px;
+  height: :50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px
+}
+
+button {
+  width: 250px;
+}
+
+input[type="submit"],
+button {
+  border: 1px solid black;
+  width: 150px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px
+}
+
+div {
+  border: 0px solid black;
+  width: 450px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px
+}
+
+
+/* turn off number spinner */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

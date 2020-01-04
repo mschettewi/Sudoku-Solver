@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="../static/css/board.css">
+      <title>Sudoku Solver</title>
+      <script src="../static/js/validate.js" defer></script>
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+   </head>
+   <body>
+      <center>
+         {% if invalid %}
+         <script type="text/javascript">alert("Invalid input");</script>
+         {% endif %}
+         {% if disclaimer == "No Solution" %}
+         <script type="text/javascript">alert("{{ disclaimer }}");</script>
+         {% endif %}
+         <form method="post" onsubmit="return validate(true)" autocomplete="off">
+            <table>
+               <tr>
+                  {% for i in range(9) %}
+               <tr>
+                  {% for j in range(9) %}
+                  {% if board[i][j] == -1 %}
+                  <td>
+                     <input class="{{ blue[i][j] }}" min=2 max= 9 type="number" maxlength="1" value="" name="{{ i }},{{ j }}" onchange="validate(false);">
+                  </td>
+                  {% endif %}
+                  {% if board[i][j] != -1 %}
+                  <td>
+                     <input min=1 max= 9 type="number" class="{{ blue[i][j] }}" onchange="validate(false);" maxlength="1" value="{{ board[i][j] }}" name="{{ i }},{{ j }}" >
+                  </td>
+                  {% endif %}
+                  {% endfor %}
+               </tr>
+               {% endfor %}
+            </table>
+            <br>
+            <input class="submit" type="submit" value="Submit">
+         </form>
+         <br>
+         <button type="button" onclick="window.location.href='{{ url_for( 'sample' ) }}';">Sample Puzzle</button> 
+         <br>
+         <br>
+         <div>{{ disclaimer }}</div>
+      </center>
+   </body>
+</html>
