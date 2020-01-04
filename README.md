@@ -5,7 +5,7 @@ Note, it may take a moment to load as it is hosted on free tier of heroku that s
 
 
 ## Python run instructions 
-`pip install requirements.txt`  
+`pip install -r requirements.txt`  
 ### Sudoku as a constraint problem
 ``` python
 from board import Constraint
@@ -29,7 +29,7 @@ sudoku.print_board()                                  # prints board
 
 ## Python Flask hosting instructions 
 Run on localhost with following instructions   
-1) `pip install requirements.txt`    
+1) `pip install -r requirements.txt`    
 2) `python3 app.py`   
 
 [https://sudoku-solver-online.herokuapp.com/](https://sudoku-solver-online.herokuapp.com/)
